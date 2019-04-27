@@ -11,5 +11,3 @@
 3. `dotnet ef database update` to create the database, and update it with seed data.
 
 4. `dotnet run` to start the application.
-
-Cannot consume scoped service 'WolfStore.Api.Data.WolfStoreDbContext' from singleton 'WolfStore.Api.Repositories.ProductRepository
