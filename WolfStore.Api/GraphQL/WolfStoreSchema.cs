@@ -1,16 +1,17 @@
+using GraphQL;
 using GraphQL.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Name
+namespace WolfStore.Api.GraphQL
 {
   public class WolfStoreSchema : Schema
   {
-    public WolfStoreSchema()
+    public WolfStoreSchema(IDependencyResolver resolver) : base(resolver)
     {
-
+      Query = resolver.Resolve<WolfStoreQuery>();
     }
   }
 
