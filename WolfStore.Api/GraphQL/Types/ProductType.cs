@@ -1,4 +1,6 @@
 using WolfStore.Api.Data.Entities;
+using WolfStore.Api.Repositories;
+using GraphQL.DataLoader;
 using GraphQL.Types;
 
 namespace WolfStore.Api.GraphQL.Types

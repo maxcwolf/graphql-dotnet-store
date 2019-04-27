@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WolfStore.Api.Data;
 using WolfStore.Api.Data.Entities;
 
@@ -13,9 +15,14 @@ namespace WolfStore.Api.Repositories
       _dbContext = dbContext;
     }
 
-    public IEnumerable<Product> GetAll()
+    public async Task<IEnumerable<Product>> GetAll()
     {
-      return _dbContext.Products;
+      return await _dbContext.Products.ToListAsync();
+    }
+
+    public async Task<Product> GetOne(int id)
+    {
+      return await _dbContext.Products.SingleOrDefaultAsync(p => p.Id == id);
     }
   }
 }
